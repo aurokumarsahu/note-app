@@ -35,8 +35,8 @@ function App() {
           {loginStatus.length > 0 &&
             <Text color={loginStatus.includes("successfully") ? "green" : "red"} fontWeight={"bolder"}>{loginStatus.includes("success") ? '✅' : '❌'}{loginStatus}</Text>
           }
-          <Input placeholder='User Name' name="username" variant="flushed" borderBlockEndColor="grey" onChange={handleCred} />
-          <Input placeholder='Password' name="password" variant="flushed" borderBlockEndColor="grey" type="password" onChange={handleCred} />
+          <Input placeholder='User Name' name="username" variant="flushed" borderBlockEndColor="grey" onChange={handleCred} required />
+          <Input placeholder='Password' name="password" variant="flushed" borderBlockEndColor="grey" type="password" onChange={handleCred} required/>
           <Button type="submit" bgColor="lightseagreen" color={"white"} _hover _active={{ bgColor: "teal" }} >{isRegistered ? 'Login' : 'Register'}</Button>
           {!isRegistered && <Button bgColor={"azure"} onClick={() => setIsRegistered(true)} fontSize={".8rem"} _hover={{ fontWeight: "bolder" }} _active>
             Already registered, I want to Login
