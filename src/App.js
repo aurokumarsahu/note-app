@@ -14,6 +14,7 @@ function App() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setStatusLoading(true);
     if (isRegistered) {
       const res = await axios.post("https://my-api-kappa-flax.vercel.app/login", { ...cred })
       setStatusLoading(false)
@@ -39,14 +40,13 @@ function App() {
             ?(<Text color={loginStatus.includes("successfully") ? "green" : "red"} fontWeight={"bolder"}>
               {loginStatus.includes("success") ? '✅' : '❌'}{loginStatus}
             </Text>):
-            statusLoading && <Spinner variant=""/>
+            statusLoading && <Spinner color="teal" thickness="3px"/>
           }
 
           <Input placeholder='User Name' value={cred.username} name="username" variant="flushed" borderBlockEndColor="grey" onChange={handleCred} autoComplete={"off"} required/>
           <Input placeholder='Password' value={cred.password} name="password" variant="flushed" borderBlockEndColor="grey" type="password" onChange={handleCred} required/>
 
-          <Button type="submit" bgColor="lightseagreen" color={"white"} _hover _active={{ bgColor: "teal" }} 
-          onClick={()=>{setStatusLoading(true)}}>
+          <Button type="submit" bgColor="lightseagreen" color={"white"} _hover={{ bgColor: "teal" }} _active={{ bgColor: "teal" }}>
             {isRegistered ? 'Login' : 'Register'}
             </Button>
 
