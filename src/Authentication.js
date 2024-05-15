@@ -27,7 +27,7 @@ const Authentication=()=>{
     }
   }
   return (
-    <Center h="100vh">
+    <Center h="98vh">
       <form onSubmit={handleLogin}>
         <Stack border="2px" borderColor="aliceblue" borderRadius={35}
           alignItems="center" p="6%"  bgColor="azure" 
