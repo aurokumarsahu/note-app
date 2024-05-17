@@ -10,11 +10,12 @@ const useAuthContext=()=>{
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
+  const [userGlobalName,setUserGlobalName]=useState("");
   const navigate=useNavigate()
 
   return (
     <>
-    <AuthContext.Provider value={{authenticated,setAuthenticated}}>
+    <AuthContext.Provider value={{authenticated,setAuthenticated,userGlobalName,setUserGlobalName}}>
     {!authenticated
         ? <Authentication/>
         : <Dashboard/>

@@ -8,7 +8,7 @@ const Authentication=()=>{
   const [isRegistered, setIsRegistered] = useState(false)
   const [loginStatus, setLoginStatus] = useState("")
   const [statusLoading, setStatusLoading] = useState(false)
-  const {authenticated,setAuthenticated}=useAuthContext()
+  const {setAuthenticated,setUserGlobalName}=useAuthContext()
 
   const handleCred = (e) => {
     setCred({ ...cred, [e.target.name]: e.target.value })
@@ -23,7 +23,9 @@ const Authentication=()=>{
       setLoginStatus(res.data)
       console.log(typeof(res.data));
       if(res.data==="Logged in successfully"){
-        setTimeout(()=>setAuthenticated(true),5000)
+        setTimeout(()=>{setAuthenticated(true);
+          setUserGlobalName(cred.username);
+        },5000)
         
       }
     }
