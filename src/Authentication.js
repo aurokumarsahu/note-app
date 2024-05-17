@@ -2,7 +2,6 @@ import { Button, Center, Input, Spinner, Stack, Text } from "@chakra-ui/react"
 import {useState } from "react";
 import axios from "axios";
 import { useAuthContext } from "./App";
-import { useNavigate } from "react-router-dom";
 
 const Authentication=()=>{
   const [cred, setCred] = useState({ username: "", password: "" });
@@ -10,7 +9,6 @@ const Authentication=()=>{
   const [loginStatus, setLoginStatus] = useState("")
   const [statusLoading, setStatusLoading] = useState(false)
   const {authenticated,setAuthenticated}=useAuthContext()
-  const navigate = useNavigate();
 
   const handleCred = (e) => {
     setCred({ ...cred, [e.target.name]: e.target.value })
@@ -23,6 +21,11 @@ const Authentication=()=>{
       const res = await axios.post("https://my-api-kappa-flax.vercel.app/login", { ...cred })
       setStatusLoading(false)
       setLoginStatus(res.data)
+      console.log(typeof(res.data));
+      if(res.data==="Logged in successfully"){
+        setTimeout(()=>setAuthenticated(true),5000)
+        
+      }
     }
     else {
       const res = await axios.post("https://my-api-kappa-flax.vercel.app/sign-up", { ...cred })
@@ -31,11 +34,7 @@ const Authentication=()=>{
     }
   }
 
-  const navigateToDashboard = () => {
-    if (authenticated)
-      navigate('/dashboard')
-  }
-
+  
   return (
     <Center h="98vh">
       <form onSubmit={handleLogin}>
