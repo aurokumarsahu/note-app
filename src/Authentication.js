@@ -25,7 +25,7 @@ const Authentication=()=>{
       if(res.data==="Logged in successfully"){
         setTimeout(()=>{setAuthenticated(true);
           setUserGlobalName(cred.username);
-        },5000)
+        },2000)
         
       }
     }
