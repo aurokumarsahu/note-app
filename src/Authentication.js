@@ -9,7 +9,7 @@ const Authentication = () => {
   const [isRegistered, setIsRegistered] = useState(false)
   const [loginStatus, setLoginStatus] = useState("")
   const [statusLoading, setStatusLoading] = useState(false)
-  const { setAuthenticated, setUserGlobalData } = useAuthContext()
+  const { setAuthenticated, setUserGlobalData,userGlobalData } = useAuthContext()
 
   const handleCred = (e) => {
     setCred({ ...cred, [e.target.name]: e.target.value })
@@ -22,11 +22,12 @@ const Authentication = () => {
       const res = await axios.post("https://my-api-kappa-flax.vercel.app/login", { ...cred })
       setStatusLoading(false)
       setLoginStatus(res.data)
-      console.log(typeof (res.data));
       if (res.data === "Logged in successfully") {
         setTimeout(() => {
           setAuthenticated(true);
-          setUserGlobalData({ ...cred });
+          setUserGlobalData({...userGlobalData, username:cred.username});
+           sessionStorage.setItem('token',userGlobalData.token)
+           sessionStorage.setItem('username',cred.username)
         }, 300)
 
       }

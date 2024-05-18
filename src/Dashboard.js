@@ -3,7 +3,7 @@ import { useAuthContext } from "./App";
 
 
 const Dashboard = () => {
-    const { userGlobalName, authenticated } = useAuthContext();
+    const { userGlobalData, authenticated } = useAuthContext();
     return (
         <>
             {/* Header*/}
@@ -11,8 +11,8 @@ const Dashboard = () => {
                 <HStack  justifyContent="space-between" w={"92vw"}>
                     <Text fontSize={"2rem"} fontFamily={"cursive"} >WriteSpace</Text>
                     <HStack >
-                        <Avatar name={userGlobalName} size="md"></Avatar>
-                        <Text>Hi, {userGlobalName}</Text>
+                        <Avatar name={sessionStorage.getItem("username")} size="md"></Avatar>
+                        <Text>Hi, {sessionStorage.getItem("username")}</Text>
                     </HStack>
                 </HStack>
             </Center>
