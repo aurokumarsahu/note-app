@@ -54,8 +54,10 @@ const Authentication=()=>{
             statusLoading && <Spinner color="teal" thickness="3px"/>
           }
 
-          <Input placeholder='User Name' value={cred.username} name="username" variant="flushed" borderBlockEndColor="grey" onChange={handleCred} autoComplete={"off"} required/>
-          <Input placeholder='Password' value={cred.password} name="password" variant="flushed" borderBlockEndColor="grey" type="password" onChange={handleCred} required/>
+          <Input placeholder='User Name' value={cred.username} name="username" 
+          variant="flushed" borderBlockEndColor="grey" onChange={handleCred} autoComplete={"off"} required/>
+          <Input placeholder='Password' value={cred.password} name="password" 
+          variant="flushed" borderBlockEndColor="grey" type="password" onChange={handleCred} required/>
 
           <Button type="submit" bgColor="lightseagreen" color={"white"} _hover={{ bgColor: "teal" }} _active={{ bgColor: "teal" }}>
             {isRegistered ? 'Login' : 'Register'}
