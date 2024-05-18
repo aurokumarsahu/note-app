@@ -1,6 +1,7 @@
 import { Box, Center, HStack, Stack, Heading, Textarea, Text, Avatar, TagRightIcon } from "@chakra-ui/react";
 import { useAuthContext } from "./App";
 import Logout from "./Logout";
+import AvatarMenu from "./AvatarMenu";
 
 const Dashboard = () => {
     const { userGlobalData, authenticated } = useAuthContext();
@@ -11,9 +12,8 @@ const Dashboard = () => {
                 <HStack justifyContent="space-between" w={"92vw"}>
                     <Text fontSize={"2rem"} fontFamily={"cursive"} >WriteSpace</Text>
                     <HStack justifyContent="space-around">
-                        <Avatar name={sessionStorage.getItem("username")} size="md" ></Avatar>
+                        <AvatarMenu username={sessionStorage.getItem("username")} />
                         <Text>Hi, {sessionStorage.getItem("username")}</Text>
-                        <Logout/>
                     </HStack>
                 </HStack>
             </Center>
