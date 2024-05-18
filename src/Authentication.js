@@ -62,7 +62,7 @@ const Authentication = () => {
           }
 
           <Input placeholder='User Name' value={cred.username} name="username"
-            variant="flushed" borderBlockEndColor="grey" onChange={handleCred} autoComplete={"off"} required />
+            variant="flushed" borderBlockEndColor="grey" onChange={handleCred} autoComplete={"off"} required autoFocus/>
           <Input placeholder='Password' value={cred.password} name="password"
             variant="flushed" borderBlockEndColor="grey" type="password" onChange={handleCred} required />
 
