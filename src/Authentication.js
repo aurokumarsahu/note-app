@@ -1,4 +1,4 @@
-import { Button, Center, Input, Spinner, Stack, Text } from "@chakra-ui/react"
+import { Button, Center, HStack, Input, Spinner, Stack, Text } from "@chakra-ui/react"
 import {useState } from "react";
 import axios from "axios";
 import { useAuthContext } from "./App";
@@ -24,8 +24,8 @@ const Authentication=()=>{
       console.log(typeof(res.data));
       if(res.data==="Logged in successfully"){
         setTimeout(()=>{setAuthenticated(true);
-          setUserGlobalName(cred.username);
-        },200)
+          setUserGlobalData({...cred});
+        },300)
         
       }
     }
@@ -48,9 +48,9 @@ const Authentication=()=>{
           justifyContent={"center"}>
 
           {loginStatus.length > 0
-            ?(<Text color={loginStatus.includes("successfully") ? "green" : "red"} fontWeight={"bolder"}>
-              {loginStatus.includes("success") ? '✅' : '❌'}{loginStatus}
-            </Text>):
+            ?(<HStack color={loginStatus.includes("successfully") ? "green" : "red"} fontWeight={"bolder"}>
+              {loginStatus.includes("success") ? <Text fontSize={"2rem"}>✅</Text> : '❌'+loginStatus}
+            </HStack>):
             statusLoading && <Spinner color="teal" thickness="3px"/>
           }
 

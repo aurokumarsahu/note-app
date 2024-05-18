@@ -10,7 +10,7 @@ const useAuthContext=()=>{
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [userGlobalData,setUserGlobalData]=useState("");
+  const [userGlobalData,setUserGlobalData]=useState({username:"",token:""});
   const navigate=useNavigate()
 
   return (
