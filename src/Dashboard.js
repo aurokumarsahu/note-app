@@ -1,4 +1,4 @@
-import { Box, Center, HStack, Stack, Heading, Textarea, Text, Avatar, TagRightIcon } from "@chakra-ui/react";
+import { Box, Center, HStack, Stack, Heading, Textarea, Text, Avatar, TagRightIcon, Skeleton } from "@chakra-ui/react";
 import { useAuthContext } from "./App";
 import Logout from "./Logout";
 import AvatarMenu from "./AvatarMenu";
@@ -21,9 +21,15 @@ const Dashboard = () => {
 
             <HStack h={"92vh"} bgColor={"azure"} spacing={0} alignItems={"start"} justifyContent={"center"}>
                 <Box m={"1%"} w={"92vw"} >
-                    <Textarea placeholder="Enter your content" border={"4px solid teal"} resize={"vertical"} _hover={{ borderColor: "teal" }}
+                    {/* <Textarea placeholder="Enter your content" border={"4px solid teal"} resize={"vertical"} _hover={{ borderColor: "teal" }}
                         _focus={{ borderColor: "teal" }} >
-                    </Textarea>
+                    </Textarea> */}
+                    <Stack>
+                        <Skeleton height='20px'  bgColorcolor={"teal"}/>
+                        <Skeleton height='20px' color={"teal"}/>
+                        <Skeleton height='20px' color={"teal"}/>
+                    </Stack>
+                    <Text color={"grey"} as={"b"}>Development in progress</Text>
                 </Box>
             </HStack>
         </>
