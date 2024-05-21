@@ -25,7 +25,7 @@ const Authentication = () => {
       if (res.data?.message=== "Logged in successfully") {
         setTimeout(() => {
           setAuthenticated(true);
-          setUserGlobalData({...userGlobalData, username:cred.username});
+          setUserGlobalData({token:res.data?.jwtToken, username:cred.username});
            sessionStorage.setItem('token',userGlobalData.token)
            sessionStorage.setItem('username',cred.username)
         }, 300)
