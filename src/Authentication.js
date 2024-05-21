@@ -21,8 +21,8 @@ const Authentication = () => {
     if (isRegistered) {
       const res = await axios.post("https://my-api-kappa-flax.vercel.app/login", { ...cred })
       setStatusLoading(false)
-      setLoginStatus(JSON.parse(res.data)?.message)
-      if (JSON.parse(res.data)?.message === "Logged in successfully") {
+      setLoginStatus(res.data?.message)
+      if (res.data?.message=== "Logged in successfully") {
         setTimeout(() => {
           setAuthenticated(true);
           setUserGlobalData({...userGlobalData, username:cred.username});
