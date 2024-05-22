@@ -22,14 +22,11 @@ const Authentication = () => {
       const res = await axios.post("https://my-api-kappa-flax.vercel.app/login", { ...cred })
       setStatusLoading(false)
       setLoginStatus(res.data?.message)
-      if (res.data?.message=== "Logged in successfully") {
-        setTimeout(() => {
+      if (res.status===200) {    
           setAuthenticated(true);
           setUserGlobalData({token:res.data?.jwtToken, username:cred.username});
-           sessionStorage.setItem('token',userGlobalData.token)
-           sessionStorage.setItem('username',cred.username)
-        }, 300)
-
+          sessionStorage.setItem('token',res.data?.jwtToken)
+          sessionStorage.setItem('username',cred.username)
       }
     }
     else {
