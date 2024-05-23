@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <>
             {/* Header*/}
-            <Center h={"9vh"} bgColor={"teal"} color={"white"} position="sticky" top={0} zIndex={1} bgColor="#004C4C" >
+            <Center h={"9vh"}  color={"white"} position="sticky" top={0} zIndex={1} bgColor="#004C4C" >
                 <HStack justifyContent="space-between" w={"92vw"}>
                     <Text fontSize={"2rem"} fontFamily="monospace" >TaskTrack</Text>
                     <HStack justifyContent="space-around">
