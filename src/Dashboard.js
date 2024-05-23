@@ -21,9 +21,6 @@ const Dashboard = () => {
 
             <HStack h={"92vh"} bgColor={"azure"} spacing={0} alignItems={"start"} justifyContent={"center"}>
                 <Box m={"1%"} w={"92vw"} >
-                    {/* <Textarea placeholder="Enter your content" border={"4px solid teal"} resize={"vertical"} _hover={{ borderColor: "teal" }}
-                        _focus={{ borderColor: "teal" }} >
-                    </Textarea> */}
                     <Stack>
                         <Skeleton height='20px'  bgColor={"teal"}/>
                         <Skeleton height='20px' color={"teal"}/>
