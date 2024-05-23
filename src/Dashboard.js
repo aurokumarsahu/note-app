@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <>
             {/* Header*/}
-            <Center h={"9vh"} bgColor={"teal"} color={"white"} >
+            <Center h={"9vh"} bgColor={"teal"} color={"white"} position="sticky" top={0} zIndex={1} bgColor="#004C4C" >
                 <HStack justifyContent="space-between" w={"92vw"}>
                     <Text fontSize={"2rem"} fontFamily="monospace" >TaskTrack</Text>
                     <HStack justifyContent="space-around">
@@ -23,11 +23,11 @@ const Dashboard = () => {
             <HStack h={"92vh"} bgColor={"azure"} spacing={0} alignItems={"start"} justifyContent={"center"}>
                 <Box m={"1%"} w={"92vw"} >
                     <SimpleGrid spacing={3} columns={{sm:2,md:3}}>
-                    {[1,2,3,4,5,6].map((x,inx)=>{
+                    {[1,2,3,4,].map((x,inx)=>{
                         return <Tiles key={x} Id={x}/>
                     })}
                     </SimpleGrid>
-                    <Stack>
+                    <Stack mt={2}>
                         <Skeleton height='20px'  bgColor={"teal"}/>
                         <Skeleton height='20px' color={"teal"}/>
                         <Skeleton height='20px' color={"teal"}/>
