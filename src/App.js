@@ -13,9 +13,13 @@ function App() {
   const [userGlobalData, setUserGlobalData] = useState({ username: "", token: "" });
   const navigate = useNavigate()
 
+
+
   useEffect(
-    ()=>setAuthenticated(userGlobalData.token==sessionStorage.getItem("token")?true:false)
-    ,[authenticated]
+    () => {
+      setAuthenticated(sessionStorage.getItem("token") ? true : false)
+    }
+    , [authenticated]
   )
 
   return (

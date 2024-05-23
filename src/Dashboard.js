@@ -25,7 +25,7 @@ const Dashboard = () => {
                         _focus={{ borderColor: "teal" }} >
                     </Textarea> */}
                     <Stack>
-                        <Skeleton height='20px'  bgColorcolor={"teal"}/>
+                        <Skeleton height='20px'  bgColor={"teal"}/>
                         <Skeleton height='20px' color={"teal"}/>
                         <Skeleton height='20px' color={"teal"}/>
                     </Stack>
