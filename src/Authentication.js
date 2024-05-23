@@ -55,7 +55,7 @@ const Authentication = () => {
                 <Text>{loginStatus}</Text>
              </HStack>
             ) 
-            :statusLoading && <Spinner color="teal" thickness="3px" />
+            :statusLoading && <Spinner color="teal" thickness="3px" speed="2.5s"/>
           }
 
           <Input placeholder='User Name' value={cred.username} name="username"
