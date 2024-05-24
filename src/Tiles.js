@@ -9,7 +9,7 @@ const Tiles=({Id})=>{
                     Task Id: {Id}
                 </Text>
             </CardHeader>
-            <CardBody pt={0}>
+            <CardBody pt={0} mt={4}>
                 <Box>
                     <Textarea resize="none" _focus={{border:"3px white solid"}} focusBorderColor="white" />
                 </Box>
