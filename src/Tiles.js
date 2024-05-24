@@ -1,5 +1,5 @@
 import { ArrowLeftIcon } from "@chakra-ui/icons";
-import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Icon,Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Icon,Text,Box,Textarea } from "@chakra-ui/react";
 import { IoPersonAdd } from "react-icons/io5";
 const Tiles=({Id})=>{
     return(
@@ -9,8 +9,10 @@ const Tiles=({Id})=>{
                     Task Id: {Id}
                 </Text>
             </CardHeader>
-            <CardBody>
-                Description
+            <CardBody pt={0}>
+                <Box>
+                    <Textarea resize="none" _focus={{border:"3px white solid"}} focusBorderColor="white" />
+                </Box>
             </CardBody>
             <Divider/>
             <CardFooter>
