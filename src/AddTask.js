@@ -12,11 +12,12 @@ const AddTask = () => {
     return (
         <Card bgColor="lightseagreen" color={"white"}>
             <CardHeader>
-                <Box>
-                    <Text fontWeight={"bold"} display={"inline"}>
-                        New Task
-                    </Text>
-                    {/* <Button float={"right"}><Icon as={IoMdAdd} /></Button> */}
+                <Box alignItems={"flex-start"}>
+                    <Text fontWeight={"bold"} display={"inline"}>New Task</Text>
+                    <Button bgColor={"inherit"} _hover={{bgColor:"inherit"}} _active={{bgColor:"inherit"}} 
+                    float={"right"} p={0}>
+                        <Icon as={IoMdAdd} boxSize={"2.5rem"} color={"white"}/>
+                        </Button>
                 </Box>
             </CardHeader>
             <CardBody pt={0}>
