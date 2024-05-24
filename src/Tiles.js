@@ -13,7 +13,7 @@ const Tiles=({Id,desc})=>{
                 </Text>
                 <Icon as={!editable?EditIcon:CheckIcon} display={"inline"} float={"right"} boxSize={"1.5rem"} onClick={()=>setEditable(!editable)}/>
             </CardHeader>
-            <CardBody pt={0} mt={4}>
+            <CardBody>
                 <Box>
                     <Textarea resize="none" value={desc} isDisabled={!editable} _disabled={{color:"white"}}
                     _focus={{border:"3px white solid"}} focusBorderColor="white" />
