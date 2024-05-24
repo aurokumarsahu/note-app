@@ -14,7 +14,7 @@ export default function EditableControls() {
         <IconButton icon={<CloseIcon />} {...getCancelButtonProps()} />
       </ButtonGroup>
     ) : (
-      <Flex justifyContent='center'>
+      <Flex justifyContent="flex-start">
         <IconButton size='sm' icon={<EditIcon />} {...getEditButtonProps()} />
       </Flex>
     )
