@@ -3,6 +3,7 @@ import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Icon,Text,Box,
 import { color } from "framer-motion";
 import { useDebugValue, useState } from "react";
 import { IoPersonAdd } from "react-icons/io5";
+import Priority from "./Priority";
 const Tiles=({Id,tasks,task,setTasks})=>{
     const [editable,setEditable]=useState(false)
     const editTile=(e)=>{
@@ -27,10 +28,13 @@ const Tiles=({Id,tasks,task,setTasks})=>{
                 </Box>
             </CardBody>
             <Divider/>
-            <CardFooter >
+            <CardFooter>
                 <HStack title="Add Peer">
                     <Icon as={IoPersonAdd} boxSize={"1.5rem"}/>
                      <Text>Add Peer</Text>
+                </HStack>
+                <HStack gap={"0.5rem"} ml={"auto"}>
+                    <Priority/>
                 </HStack>
             </CardFooter>       
         </Card>
