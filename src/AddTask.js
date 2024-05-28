@@ -29,11 +29,11 @@ const AddTask = ({setTasks}) => {
                 </Box>
             </CardBody>
             <Divider />
-            <CardFooter>
-                <Button gap={2}>
-                    <Icon as={IoPersonAdd} />
-                    Add Peer
-                </Button>
+            <CardFooter >
+                <HStack title="Add Peer">
+                    <Icon as={IoPersonAdd} boxSize={"1.5rem"}/>
+                     <Text>Add Peer</Text>
+                </HStack>
             </CardFooter>
         </Card>
     );
