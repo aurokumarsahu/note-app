@@ -29,7 +29,7 @@ const Dashboard = () => {
                         <AddTask setTasks={setTasks}/>
                         {
                             tasks.map((task,inx)=>{
-                                return <Tiles key={(inx+1)*10} Id={inx+1} desc={task.taskDescription} setTasks={setTasks}/>
+                                return <Tiles key={(inx+1)*10} Id={inx+1} task={task} setTasks={setTasks}/>
                             })
                         }
                     </SimpleGrid>
