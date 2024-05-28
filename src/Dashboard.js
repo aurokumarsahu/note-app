@@ -26,10 +26,10 @@ const Dashboard = () => {
             <HStack h={"92vh"} bgColor={"azure"} spacing={0} alignItems={"start"} justifyContent={"center"}>
                 <Box m={"1%"} w={"92vw"} >
                     <SimpleGrid spacing={3} columns={{ sm: 2, md: 3 }}>
-                        <AddTask setTasks={setTasks}/>
+                        <AddTask setTasks={setTasks} tasks={tasks}/>
                         {
-                            tasks.map((task,inx)=>{
-                                return <Tiles key={(inx+1)*10} Id={inx+1} task={task} setTasks={setTasks}/>
+                            tasks.map((task)=>{
+                                return <Tiles key={task.taskId} Id={task.taskId} tasks={tasks} task={task} setTasks={setTasks}/>
                             })
                         }
                     </SimpleGrid>
