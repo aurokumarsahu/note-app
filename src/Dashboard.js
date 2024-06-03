@@ -20,13 +20,14 @@ const Dashboard = () => {
             <Center h={"9vh"} color={"white"} position="sticky" top={0} zIndex={1} bgColor="black" >
                 <HStack justifyContent="space-between" w={"92vw"}>
                     <Text fontSize={"1.5rem"} fontFamily="monospace" >TaskTrack</Text>
-                    <HStack>
+        {/*<HStack>
                     <FaTasks fontSize={"1rem"}/>
                     <Text fontSize={"1rem"} fontFamily="monospace" >|</Text>
                     <IoMdSearch fontSize={"1rem"} />
                     <Text fontSize={"1rem"} fontFamily="monospace" >|</Text>
                     <FaChartPie fontSize={"1rem"} />
                     </HStack>
+           */}
                     <HStack justifyContent="space-around">
                         <AvatarMenu username={sessionStorage.getItem("username")} />
                         <Text fontFamily="monospace" fontSize={"1rem"}>Hi, {sessionStorage.getItem("username")}</Text>
