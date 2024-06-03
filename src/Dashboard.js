@@ -21,11 +21,11 @@ const Dashboard = () => {
                 <HStack justifyContent="space-between" w={"92vw"}>
                     <Text fontSize={"1.5rem"} fontFamily="monospace" >TaskTrack</Text>
                     <HStack>
-                    <FaTasks fontSize={"1.5rem"}/>
-                    <Text fontSize={"1.5rem"} fontFamily="monospace" >|</Text>
-                    <IoMdSearch fontSize={"1.5rem"} />
-                    <Text fontSize={"1.5rem"} fontFamily="monospace" >|</Text>
-                    <FaChartPie fontSize={"1.5rem"} />
+                    <FaTasks fontSize={"1rem"}/>
+                    <Text fontSize={"1rem"} fontFamily="monospace" >|</Text>
+                    <IoMdSearch fontSize={"1rem"} />
+                    <Text fontSize={"1rem"} fontFamily="monospace" >|</Text>
+                    <FaChartPie fontSize={"1rem"} />
                     </HStack>
                     <HStack justifyContent="space-around">
                         <AvatarMenu username={sessionStorage.getItem("username")} />
