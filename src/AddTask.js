@@ -20,7 +20,7 @@ const AddTask = ({ tasks,setTasks, Id }) => {
     }
     const textAreaRef = useRef()
     return (
-        <Card bgColor="lightseagreen" color={"white"}>
+        <Card bgColor="#303030	" color={"white"}>
             <CardHeader>
                 <Box alignItems={"flex-start"}>
                     <Text fontWeight={"bold"} display={"inline"}>New Task</Text>

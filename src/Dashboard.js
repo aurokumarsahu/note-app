@@ -5,6 +5,11 @@ import AvatarMenu from "./AvatarMenu";
 import Tiles from "./Tiles";
 import AddTask from "./AddTask";
 import { useEffect, useState } from "react";
+import { Navbar } from "./Navbar";
+import { FaTasks } from "react-icons/fa";
+import { IoMdSearch } from "react-icons/io";
+import { FaChartPie } from "react-icons/fa6";
+
 
 const Dashboard = () => {
     const { userGlobalData, authenticated } = useAuthContext();
@@ -12,18 +17,24 @@ const Dashboard = () => {
     return (
         <>
             {/* Header*/}
-            <Center h={"9vh"} color={"white"} position="sticky" top={0} zIndex={1} bgColor="#004C4C" >
+            <Center h={"9vh"} color={"white"} position="sticky" top={0} zIndex={1} bgColor="black" >
                 <HStack justifyContent="space-between" w={"92vw"}>
-                    <Text fontSize={"2rem"} fontFamily="monospace" >TaskTrack</Text>
+                    <Text fontSize={"1.5rem"} fontFamily="monospace" >TaskTrack</Text>
+                    <HStack>
+                    <FaTasks fontSize={"1.5rem"}/>
+                    <Text fontSize={"1.5rem"} fontFamily="monospace" >|</Text>
+                    <IoMdSearch fontSize={"1.5rem"} />
+                    <Text fontSize={"1.5rem"} fontFamily="monospace" >|</Text>
+                    <FaChartPie fontSize={"1.5rem"} />
+                    </HStack>
                     <HStack justifyContent="space-around">
                         <AvatarMenu username={sessionStorage.getItem("username")} />
-                        <Text>Hi, {sessionStorage.getItem("username")}</Text>
+                        <Text fontFamily="monospace" fontSize={"1rem"}>Hi, {sessionStorage.getItem("username")}</Text>
                     </HStack>
                 </HStack>
             </Center>
             {/* Header*/}
-
-            <HStack h={"92vh"} bgColor={"azure"} spacing={0} alignItems={"start"} justifyContent={"center"}>
+            <HStack h={"92vh"} bgColor={"darkgrey"} spacing={0} alignItems={"start"} justifyContent={"center"}>
                 <Box m={"1%"} w={"92vw"} >
                     <SimpleGrid spacing={3} columns={{ sm: 2, md: 3 }}>
                         <AddTask setTasks={setTasks} tasks={tasks}/>

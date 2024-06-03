@@ -6,7 +6,7 @@ const AvatarMenu = ({ username }) => {
     return (
         <Menu placement="top">
             <MenuButton as={Button} rightIcon={<ChevronDownIcon boxSize="2rem"/>} size="fitContent" 
-             borderRadius={50} iconSpacing={-1.5} bgColor={"#004C4C"} _hover _active color={"white"}>
+             borderRadius={50} iconSpacing={-1.5} bgColor={"black"} _hover _active color={"white"}>
                 <Avatar name={username} size="md" ></Avatar>
             </MenuButton>
 

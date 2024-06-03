@@ -10,7 +10,7 @@ const Logout = () => {
         setAuthenticated(false)
     }
     return (
-        <Button onClick={clearSession} bgColor={"teal"} color={"white"}> 
+        <Button onClick={clearSession} bgColor={"black"} color={"white"} _hover _active> 
             Log Out
         </Button>
     )

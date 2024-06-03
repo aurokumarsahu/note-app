@@ -13,7 +13,7 @@ const Tiles=({Id,tasks,task,setTasks})=>{
         
     }
     return(
-        <Card bgColor={"teal"} color={"white"}>
+        <Card bgColor={"black"} color={"white"}>
             <CardHeader>
                 <Text fontWeight={"bold"} display={"inline"}>
                     Task Id: {Id}
